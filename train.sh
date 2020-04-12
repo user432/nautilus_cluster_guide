@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 nvidia-smi
-conda env create -f environment.yml
-source activate yxy
-pip install Pillow==6.2.2
-pip install pydicom
-pip install --upgrade efficientnet-pytorch
-python trainer_progressive_siamese.py
+conda create -n myenv python=3.6
+source activate myenv
+conda install -c anaconda tensorflow-gpu
+pip install -r requirements.txt
+python model.py
